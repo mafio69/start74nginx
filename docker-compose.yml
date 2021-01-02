@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  myapp:
+    image: 'webdevops/php-nginx-dev:7.4'
+    ports:
+      - '8200:80'
+    volumes:
+      - './app:/app'
+    depends_on:
+      - mariadb
+    environment:
+      - "WEB_DOCUMENT_ROOT=/app/public"
+      - "DEBUG=TRUE"
+    container_name: web
+
+  mariadb:
+    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=test
+      - MARIADB_PASSWORD=1234
+      - MARIADB_DATABASE=dataBase
+    ports:
+      - '8900:3306'
+    container_name: db
