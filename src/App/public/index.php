@@ -1,12 +1,10 @@
-<?php
-include '../../vendor/autoload.php';
-/** @var RouteCollector $collector */
-
-use Phroute\Phroute\RouteCollector;
-use Phroute\Phroute\Dispatcher;
-
-require "../Routes/routes.php";
-$dispatcher =  new Dispatcher($collector->getData());
-$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-
-echo $response;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<?php phpinfo() ?>:
+</body>
+</html>
