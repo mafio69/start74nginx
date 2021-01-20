@@ -6,12 +6,15 @@ services:
     ports:
       - '8200:80'
     volumes:
-      - './app:/app'
+      - './src:/app'
+      - ./docker/custom.ini:/usr/local/etc/php/conf.d/custom.ini
     depends_on:
       - mariadb
     environment:
       - "WEB_DOCUMENT_ROOT=/app/public"
       - "DEBUG=TRUE"
+      - COMPOSER_MEMORY_LIMIT=-1
+    working_dir: /app
     container_name: web
 
   mariadb:
