@@ -11,10 +11,10 @@ services:
     depends_on:
       - mariadb
     environment:
-      - "WEB_DOCUMENT_ROOT=/app/App/public"
+      - "WEB_DOCUMENT_ROOT=/app/public"
       - "DEBUG=TRUE"
       - COMPOSER_MEMORY_LIMIT=-1
-    working_dir: /app
+    working_dir: /src
     container_name: web
     extra_hosts:
       - "extra:172.28.0.1"

@@ -1,11 +1,11 @@
 <?php
 
-use App\Web\Controller\IndexController;
+use App\Controller\StartController;
 use Phroute\Phroute\RouteCollector;
 
 $collector = new RouteCollector();
 
-$collector->get('/{id}',[IndexController::class,'index']);
+$collector->get('/{id}',[StartController::class,'index']);
 $collector->post('products', function(){
     return 'Create Product';
 });
