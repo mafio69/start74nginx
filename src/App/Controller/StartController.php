@@ -3,10 +3,11 @@ namespace App\Controller;
 
 class StartController
 {
-    public function index($id)
+    /**
+     * @param int $id
+     */
+    public function index(int $id): void
     {
-        dump($id);
-        echo "start".$id;
-
+        echo "start ".$id;
     }
 }
