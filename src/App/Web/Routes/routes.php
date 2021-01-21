@@ -1,6 +1,6 @@
 <?php
 
-use App\Web\Controller\IndexController;
+use App\WEB\Controller\IndexController;
 use Phroute\Phroute\RouteCollector;
 
 $collector = new RouteCollector();
