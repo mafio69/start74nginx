@@ -6,9 +6,8 @@ namespace App\Web\Controller;
 
 class IndexController
 {
-    public function index($id): void
+    public function index(int $id): void
     {
-        dump($id);
-        echo "start".$id;
+        echo "start ".$id;
     }
 }
