@@ -6,12 +6,12 @@ services:
     ports:
       - '8200:80'
     volumes:
-      - './src:/app'
-      - ./docker/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - './:/src'
+      - ../docker/custom.ini:/usr/local/etc/php/conf.d/custom.ini
     depends_on:
       - mariadb
     environment:
-      - "WEB_DOCUMENT_ROOT=/app/public"
+      - "WEB_DOCUMENT_ROOT=/src/App/public"
       - "DEBUG=TRUE"
       - COMPOSER_MEMORY_LIMIT=-1
     working_dir: /src
@@ -28,4 +28,4 @@ services:
       - MARIADB_DATABASE=dataBase
     ports:
       - '8900:3306'
-    container_name: db
+    container_name: database
